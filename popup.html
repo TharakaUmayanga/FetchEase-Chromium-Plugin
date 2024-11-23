@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FetchEase Downloader</title>
+  <style>
+    body {
+      width: 300px;
+      padding: 10px;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    select, button {
+      padding: 8px;
+      margin: 5px 0;
+    }
+    .schedule-container {
+      display: none;
+    }
+    #schedule:checked ~ .schedule-container {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h3>Download with FetchEase</h3>
+    <div>
+      <label>Download Type:</label>
+      <select id="downloadType">
+        <option value="video">Video</option>
+        <option value="audio">Audio</option>
+        <option value="playlist">Playlist</option>
+      </select>
+    </div>
+    <div>
+      <label>Quality:</label>
+      <select id="quality">
+        <option value="best">Best</option>
+        <option value="high">High</option>
+        <option value="medium">Medium</option>
+        <option value="low">Low</option>
+      </select>
+    </div>
+    <div>
+      <input type="checkbox" id="schedule">
+      <label for="schedule">Schedule Download</label>
+    </div>
+    <div class="schedule-container">
+      <input type="datetime-local" id="scheduleTime">
+    </div>
+    <button id="sendToApp">Send to FetchEase</button>
+    <div id="status"></div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
